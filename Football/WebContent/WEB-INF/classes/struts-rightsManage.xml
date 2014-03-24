@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="RightsManage" namespace="/" extends="default">
+		<action name="*RightsManage" class="RightsManageAction" method="{1}RightsManage">
+			<result name="index">
+				/WEB-INF/page/RightsManage/RightsManage.jsp
+			</result>
+		</action>
+	</package>
+	
+	<package name="ajaxRights" namespace="/" extends="json-default">
+		<action name="getRightsData" class="RightsManageAction" method="getRightsData">
+        <result type="json">
+           <param name="root">jsonResult</param>
+        </result>
+    	</action>
+    </package>
+</struts>

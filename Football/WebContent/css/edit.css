@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+BODY {
+	background-color: #ffffff;
+	scrollbar-shadow-color: #346B99;
+	scrollbar-darkshadow-color: #ffffff;
+	scrollbar-arrow-color: #000000;
+	scrollbar-base-color: #AAD9FF;
+	scrollbar-highlight-color: #346B99;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+img {
+	border: 0px;
+}
+
+A:link {
+	color: #000000;
+	text-decoration: none;
+}
+
+A:visited {
+	color: #990000;
+	text-decoration: none;
+}
+
+A:hover {
+	color: #333333;
+	text-decoration: underline;
+}
+
+A:active {
+	color: #333333;
+	text-decoration: none;
+}
+.trtitle
+{
+	height:28px;	
+}
+.trtit
+{
+	height:28px;	
+	color:#333333;
+}
+.tbv {
+	border-collapse: collapse;
+	border: 1px solid #999;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.tbv caption {
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.tbv thead {
+	background: #ffc;
+}
+
+.tbv td,table.tbv th {
+	border: 1px solid #ccc;
+}
+
+.tbv td {
+	padding-left: 0.8em;
+}
+
+.tbv tfoot {
+	background: #fcc;
+}
+.tbv tr {
+	height: 30px;
+	line-height: 30px;
+}
+
+.tbv .linenum {
+	width: 15%;
+	background: #0cf;
+}
+
+.tb2 {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.tb2 tr {
+	height: 30px;
+	line-height: 30px;
+}
+
+.tb2 thead {
+	background: #ffc;
+}
+
+.tb2 td {
+	padding-left: 0.8em;
+}
+
+.tbb {
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+	white-space: nowrap;
+	word-break: keep-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.tbb td,.tbb th {
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+	white-space: nowrap;
+	word-break: keep-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-indent: 20px;
+}
+
+.tbb tr {
+	height: 30px;
+	line-height: 30px;
+}
+
+.tbb thead {
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+}
+.btnsub
+{
+	line-height:40px;
+	text-align:center;
+}

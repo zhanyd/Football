@@ -1,0 +1,7 @@
+<script language="javascript" type="text/javascript" src="scripts/jquery/jquery-1.8.3.js"></script>
+<script language="javascript" type="text/javascript" src="scripts/artdialog/artDialog.js?skin=chrome"></script>
+<script language="javascript" type="text/javascript" src="scripts/artdialog/iframeTools.js"></script>
+<script language="javascript" type="text/javascript" src="scripts/pub.js"></script>
+<script type="text/javascript" src="scripts/js.js"></script>
+<script type="text/javascript" src="scripts/utils.js"></script>
+<jsp:include page="/WEB-INF/page/Message.jsp" flush="true"></jsp:include>

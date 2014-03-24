@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* CSS Document */
+body{ font-size:12px;}
+#tablewi{ width:100%;background:#ccc; text-align:center; font-size:12px;margin-top:2px; }
+#tablewi td{ background-color:#FFF; height:24px; padding-left:5px;}
+#tablewi th{ background-color:#E0ECFF;height:24px;}
+#tablewi thead tr{background:url(img/1.jpg) ;}
+.sty1{ background:url(1.jpg) ; color:#333333;}
+.sty1 td{color:#333333;font-weight:bold;}
+#tablewi1{ width:439px;background:#ccc; text-align:left; font-size:12px;}
+#tablewi1 td{ background-color:#FFF; height:24px;padding-left:5px;}
+
+#tablewi2{ width:555px;text-align:left; font-size:12px;}
+#tablewi2 td{height:30px;padding-left:5px;color:#333;}
+
+#tablewi3{ width:1165px;text-align:left; font-size:12px;}
+#tablewi3 td{ height:30px; color:#333; padding-left:5px;}
+.txt1{ width:173px; border:1px #c0cccc solid;}
+.txt2{ width:40px; border:1px #c0cccc solid;}
+.txt3{border:1px #c0cccc solid;}
+.txt4{width:103px; border:1px #c0cccc solid;}
+
+#tablewi4{ width:700px;text-align:left; font-size:12px;}
+#tablewi4 td{height:30px;padding-left:5px;color:#333;}
+#tbsearch{margin:5px 0 0 10px;}
+#tbsearch input.text{width:103px; border:1px #c0cccc solid;}
+.date-picker-wp {
+display: none;
+position: absolute;
+background: #f1f1f1;
+left: 40px;
+top: 40px;
+border-top: 4px solid #3879d9;
+}
+.date-picker-wp table {
+border: 1px solid #ddd;
+}
+.date-picker-wp td {
+background: #fafafa;
+width: 22px;
+height: 18px;
+border: 1px solid #ccc;
+font-size: 12px;
+text-align: center;
+}
+.date-picker-wp td.noborder {
+border: none;
+background: none;
+}
+.date-picker-wp td a {
+color: #1c93c4;
+text-decoration: none;
+}
+.strong {font-weight: bold}
+.hand {cursor: pointer; color: #3879d9}
+
+.main{ background:url(1_03.jpg) repeat-x; height:60px; width:100%; border:1px #c0cccc solid; margin:2px 0;}
+.main table{font-size:12px; margin:1px 0 0 10px;}
+.main2{ background:url(1_03.jpg) repeat-x; height:60px; width:1100px; border:1px #c0cccc solid; margin:2px 0;}
+.main2 table{font-size:12px;}
+.mainta{ width:1200px;border:1px #c0cccc solid;}
+.tit{ background:url(1_07.jpg) repeat-x; height:25px; border-bottom:1px #c0cccc solid;}
+.footer1{ width:100%; float:left;}
+.footer2{ widows:600px; float:right;}
+
+
+
+/* 表格 */
+.tbv {
+ 	border-collapse: collapse;
+	border: 1px solid #999; 
+	width: 100%;
+	margin: 0 auto;
+}
+
+.tbv caption {
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.tbv thead {
+	background: #ffc;
+}
+
+.tbv td,table.tbv th {
+	border: 1px solid #ccc;
+}
+
+.tbv td {
+	padding-left: 0.8em;
+}
+
+.tbv tr{
+	line-height:40px;
+}
+
+.tbv tfoot {
+	background: #fcc;
+}
+
+.tbv .linenum {
+	width: 15%;
+	background: #0cf;
+}
+
+
+/* 按钮 */
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+#button1 {
+    background: transparent url('../img/bg_button_a.gif') no-repeat scroll top right;
+    color: #444;
+    display: block;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+}
+
+#button1 span {
+    background: transparent url('../img/bg_button_span.gif') no-repeat;
+    display: block;
+    line-height: 14px;
+    padding: 5px 0 5px 18px;
+} 
+
+#button1:active {
+    background-position: bottom right;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+#button1:active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px; /* push text down 1px */
+} 

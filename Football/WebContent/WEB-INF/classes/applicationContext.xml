@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+
+ 	<bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource" destroy-method="close"> 
+ 		<property name="driverClassName" 
+ 			value="${jdbc.driverClassName}" /> 
+ 		<property name="url" value="${jdbc.url}" /> 
+ 		<property name="username" value="${jdbc.username}" /> 
+ 		<property name="password" value="${jdbc.password}" /> 
+ 		<property name="initialSize" value="10" /> 
+ 		<property name="maxActive" value="50" /> 
+ 		<property name="maxIdle" value="50" /> 
+ 		<property name="maxWait" value="10000" /> 
+ 	</bean> 
+
+<!--  <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> -->
+<!--         <property name="jndiName" value="jndi/sqlds"/> -->
+<!--     </bean> -->
+
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="sqlMapClient"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+		<value>classpath:SqlMapConfig.xml</value>
+		</property>
+		<property name="useTransactionAwareDataSource">
+			<value>true</value>
+		</property>
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+
+	<bean id="sqlMapClientTemplate"
+		class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	
+	<bean id="myDaoTemplate" class="com.wildwolf.dataaccess.MyDaoTemplate">
+	   <property name="sqlMapClientTemplate" ref="sqlMapClientTemplate"></property>
+	</bean>
+
+	<bean id="pageObject"
+		class="com.wildwolf.helper.page.PageObject">
+		<property name="myDaoTemplate">
+			<ref bean="myDaoTemplate"></ref>
+		</property>
+	</bean>
+<!--	<bean id="pageDataAccess"-->
+<!--		class="cn.com.lifeisgreat.aexp.util.page.PageDataAccessImpl">-->
+<!--		<property name="sqlMapClientTemplate">-->
+<!--			<ref bean="sqlMapClientTemplate"></ref>-->
+<!--		</property>-->
+<!--	</bean>-->
+<!---->
+
+<!--	<bean id="AEXPAction" class="com.opensymphony.xwork2.ActionSupport"-->
+<!--		scope="prototype">-->
+<!--	</bean>-->
+<!---->
+<!--	<bean id="authrInterceptor"-->
+<!--		class="cn.com.lifeisgreat.aexp.webapp.interceptor.AuthorityInterceptor">-->
+<!--		<property name="organizationService">-->
+<!--			<ref bean="organizationService" />-->
+<!--		</property>-->
+<!--	</bean>-->
+<!---->
+
+
+	<import resource="applicationContext-action.xml" />
+</beans>

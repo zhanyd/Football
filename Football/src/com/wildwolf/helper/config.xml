@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqls>
+  
+  <sql id="t_organization_insert">
+  insert into t_organization(org_code,org_name,abbr_name,employee_amount)
+  values(?,?,?,?)
+    
+  </sql>
+  
+  <sql id="mobile_url">
+   <![CDATA[ 
+   http://www.10000188.cn/smsComputer/smsComputersend.asp?zh=#user_name#&mm=#password#&hm=#mobile_no#&nr=#content#&dxlbid=3
+   ]]>
+  </sql>
+  
+  <sql id="mail_content">
+    您好，
+      订单编号为#order_code#的订单属性已被#real_name#修改，请登录系统查看。
+   
+   -------------------   
+   www.nt3c.com
+  </sql>
+  
+</sqls>

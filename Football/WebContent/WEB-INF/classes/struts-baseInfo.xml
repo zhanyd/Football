@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="product" namespace="/" extends="default">
+
+		<action name="index" class="BaseInfoActionBean"
+			method="index">
+			<result name="index">
+				/WEB-INF/page/main.jsp
+			</result>
+		</action>
+		
+		<action name="login" class="BaseInfoActionBean"
+			method="login">
+			<result name="index">
+				/WEB-INF/page/Login.jsp
+			</result>
+		</action>
+		
+				
+		
+		<!-- 角色管理 -->
+		<action name="*RoleManage" class="BaseInfoActionBean"
+			method="{1}RoleManage">
+			<result name="index">
+				/WEB-INF/page/user/RoleManage.jsp
+			</result>	
+
+			<result name="addRoleManage">
+				/WEB-INF/page/user/RoleManageAdd.jsp
+			</result>	
+			<result name="editRoleManage">
+				/WEB-INF/page/user/RoleManageEdit.jsp
+			</result>
+			
+			
+			
+	        <!-- 刷新页面 -->
+			<result name="indexRefresh" type="redirect">
+				<param name="location">searchRoleManage.action</param>             
+                <param name="pageObject.currentPageNo">1</param>
+			</result>	
+			
+		</action>
+		
+		
+		<!-- 用户管理 -->
+		<action name="*UserManage" class="BaseInfoActionBean"
+			method="{1}UserManage">
+			<result name="index">
+				/WEB-INF/page/user/UserManage.jsp
+			</result>	
+
+			<result name="addUserManage">
+				/WEB-INF/page/user/UserManageAdd.jsp
+			</result>	
+			<result name="editUserManage">
+				/WEB-INF/page/user/UserManageEdit.jsp
+			</result>
+			<result name="mainIndex">
+				/WEB-INF/page/main.jsp
+			</result>
+			<result name="Login">
+				/WEB-INF/page/Login.jsp
+			</result>
+			<result name="changePasswprd">
+				/WEB-INF/page/user/ChangePassword.jsp
+			</result>
+			<result name="adminChPasswprd">
+				/WEB-INF/page/user/AdminChangePassword.jsp
+			</result>
+			<result name="main">
+				/WEB-INF/page/mainContent.jsp
+			</result>
+			
+			
+			
+			
+	        <!-- 刷新页面 -->
+			<result name="indexRefresh" type="redirect">
+				<param name="location">searchUserManage.action</param>             
+                <param name="pageObject.currentPageNo">1</param>
+			</result>	
+			
+			 <!-- 刷新页面 -->
+			<result name="indexRefreshPass" type="redirect">
+				<param name="location">searchPassUserManage.action</param>             
+			</result>	
+			
+
+			
+			
+			
+			 <!-- 跳转新增页面 -->
+			<result name="goaddUserManage" type="redirect">
+				<param name="location">goaddUserManage.action</param>             
+			</result>		
+				
+		</action>
+		
+		
+		<!-- 数据上传配置页面 -->
+		<action name="*UploadInterval" class="BaseInfoActionBean"
+			method="{1}UploadInterval">
+			<result name="index">
+				/WEB-INF/page/sjsc/SetUploadInterval.jsp
+			</result>	
+			
+	        <!-- 刷新页面 -->
+			<result name="indexRefresh" type="redirect">
+				<param name="location">searchUploadInterval.action</param>             
+			</result>		
+		</action>
+		
+		
+		
+		<!-- 用户日志查询页面 -->
+		<action name="*UserLog" class="BaseInfoActionBean"
+			method="{1}UserLog">
+			<result name="index">
+				/WEB-INF/page/user/UserLog.jsp
+			</result>	
+	    </action>
+	    
+	    
+	    <!-- 用户登出 -->
+		<action name="UserLogout" class="BaseInfoActionBean"
+			method="UserLogout">
+			<result name="index">
+				/WEB-INF/page/Login.jsp
+			</result>	
+	    </action>
+	    
+	    
+	    
+		
+		
+		
+		<!-- 新用户注册页面 -->
+		<action name="*Register" class="BaseInfoActionBean" method="{1}Register">
+			<result name="addRegister">
+				/WEB-INF/page/UserRegister/UserRegisterAdd.jsp
+			</result>
+			<result name="mainIndex">
+				/WEB-INF/page/main.jsp
+			</result>
+			
+	        <!-- 刷新页面 -->
+			<result name="indexRefresh" type="redirect">
+				<param name="location">goRegister.action</param>      
+				<param name="pageObject.currentPageNo">1</param>       
+			</result>		
+		</action>
+		
+		
+		<!-- 队员页面 -->
+		<!-- 队员一览 -->
+		<action name="*UserInfo" class="BaseInfoActionBean" method="{1}UserInfo">
+			<!-- 动态的设置头像保存的路径 -->
+			<param name="savePath">D:\Codes\项目\Football\Football\WebContent\</param>
+			<result name="index">
+				/WEB-INF/page/UserInfo/UserInfoManage.jsp
+			</result>
+			<result name="editUserInfo">
+				/WEB-INF/page/UserInfo/UserInfoEdit.jsp
+			</result>
+			<result name="detailUserInfo">
+				/WEB-INF/page/UserInfo/UserInfoDetail.jsp
+			</result>
+			
+			 <!-- 刷新页面 -->
+			<result name="indexRefresh" type="redirect">
+				<param name="location">searchUserInfo.action</param>      
+				<param name="pageObject.currentPageNo">1</param>       
+			</result>	
+	       
+		</action>
+		
+		<!-- 球队一览 -->
+		<action name="*TeamList" class="BaseInfoActionBean" method="{1}TeamList">
+			<result name="index">
+				/WEB-INF/page/TeamManage/TeamList.jsp
+			</result>
+			
+			
+	        <!-- 刷新页面 -->
+			<result name="indexRefresh" type="redirect">
+				<param name="location">SearchTeamList.action</param>      
+				<param name="pageObject.currentPageNo">1</param>       
+			</result>		
+		</action>
+		
+		<!-- 球队管理 -->
+		<action name="*TeamManage" class="BaseInfoActionBean" method="{1}TeamManage">
+			<result name="index">
+				/WEB-INF/page/TeamManage/TeamManage.jsp
+			</result>
+			<result name="addTeamManage">
+				/WEB-INF/page/TeamManage/TeamManageAdd.jsp
+			</result>	
+			<result name="editTeamManage">
+				/WEB-INF/page/TeamManage/TeamManageEdit.jsp
+			</result>
+			<result name="detailTeamManage">
+				/WEB-INF/page/TeamManage/TeamManageDetail.jsp
+			</result>	
+			
+	        <!-- 刷新页面 -->
+			<result name="indexRefresh" type="redirect">
+				<param name="location">SearchTeamManage.action</param>      
+				<param name="pageObject.currentPageNo">1</param>       
+			</result>		
+		</action>
+		
+		
+		<!-- 队员明细 -->
+		<action name="*UserInfoRecords" class="BaseInfoActionBean" method="{1}UserInfoRecords">
+			<result name="index">
+				/WEB-INF/page/UserInfoRecords/UserInfoRecords.jsp
+			</result>
+			
+	        <!-- 刷新页面 -->
+			<result name="indexRefresh" type="redirect">
+				<param name="location">searchUserInfoRecords.action</param>      
+				<param name="pageObject.currentPageNo">1</param>       
+			</result>		
+		</action>
+		
+		<!-- 球队明细 -->
+		<action name="*TeamRecords" class="BaseInfoActionBean" method="{1}TeamRecords">
+			<result name="index">
+				/WEB-INF/page/TeamRecords/TeamRecords.jsp
+			</result>
+			
+	        <!-- 刷新页面 -->
+			<result name="indexRefresh" type="redirect">
+				<param name="location">searchTeamRecords.action</param>      
+				<param name="pageObject.currentPageNo">1</param>       
+			</result>		
+		</action>
+		
+		
+		
+		<!-- 队长页面 -->
+		<action name="*TeamMemberManage" class="BaseInfoActionBean" method="{1}TeamMemberManage">
+			<result name="index">
+				/WEB-INF/page/TeamMember/TeamMemberManage.jsp
+			</result>
+		</action>
+		
+		<action name="*TeamScoreManage" class="BaseInfoActionBean" method="{1}TeamScoreManage">
+			<result name="index">
+				/WEB-INF/page/TeamManage/TeamScoreManage.jsp
+			</result>
+		</action>
+		
+
+	</package>
+	
+	<package name="ajax" namespace="/" extends="json-default">
+		<action name="getTuserData" class="BaseInfoActionBean" method="getTuserData">
+        <result type="json">
+           <param name="root">jsonResult</param>
+        </result>
+    	</action>
+    	
+    	<action name="getTeamScoreData" class="BaseInfoActionBean" method="getTeamScoreData">
+        <result type="json">
+           <param name="root">jsonResult</param>
+        </result>
+    	</action>
+    	
+    	<action name="getTeamListJson" class="BaseInfoActionBean" method="getTeamListJson">
+        <result type="json">
+           <param name="root">jsonResult</param>
+        </result>
+    	</action>
+	</package>
+	
+
+</struts>
