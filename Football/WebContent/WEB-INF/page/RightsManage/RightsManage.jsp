@@ -113,8 +113,7 @@
        	  success: function(data){
        		     //构造树
        		 	 tree = $("#tree1").ligerTree({  
-   	             data: JSON.parse(data),
-   	         	 nodeWidth : 150
+   	             data: JSON.parse(data)
    	             });
        	  }
        	});

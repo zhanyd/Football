@@ -769,7 +769,7 @@ public class BaseInfoActionBean extends RootAction{
 			
 			
 			//用户修改密码编辑方法
-			@Permission(name="用户修改密码")
+			@Permission(name="用户修改密码编辑")
 			public String chPassUserManage() throws Exception {
 					try {
 						//密码加密
@@ -785,7 +785,7 @@ public class BaseInfoActionBean extends RootAction{
 				}
 			
 			//用户修改密码编辑页面
-			@Permission(name="用户修改密码")
+			@Permission(name="用户修改密码查询")
 			public String searchPassUserManage() throws Exception {
 				tuser = (Tuser)session.get(SysConstant.USER);
 			    tuser =  (Tuser) myDaoTemplate.queryForObject("tuser.selectByPrimaryKey", tuser);
@@ -956,10 +956,8 @@ public class BaseInfoActionBean extends RootAction{
 			public String goeditTeamManage() throws Exception {
 
 				team = (Team) myDaoTemplate.queryForObject("team.selectByPrimaryKey", team);
-				Tuser tuserInput = new Tuser();
-				tuserInput.setTEAMID(team.getID());
 				//获取球员列表
-				tuserList = myDaoTemplate.queryForList("tuser.selectByTeam",tuserInput);
+				tuserList = myDaoTemplate.queryForList("tuser.selectAll");
 				
 				return "editTeamManage";
 			}
@@ -1050,7 +1048,7 @@ public class BaseInfoActionBean extends RootAction{
 
 //-----------------------------队员页面-----------------------------------------	
 			//队员一览页面
-			@Permission(name="队员一览查询")
+			@Permission(name="队员一览页面")
 			public String goUserInfo() throws Exception {
 				
 				return "indexRefresh";
@@ -1058,7 +1056,7 @@ public class BaseInfoActionBean extends RootAction{
 			
 			
 			//队员一览页面
-			@Permission(name="队员一览查询")
+			@Permission(name="队员一览页面")
 			public String searchUserInfo() throws Exception {
 				
 				try {
@@ -1300,7 +1298,7 @@ public class BaseInfoActionBean extends RootAction{
 //----------------------------------队长页面--------------------------------------------------
 	
 			//队员战绩管理页面
-			@Permission(name="队员战绩管理查询")
+			@Permission(name="队员战绩管理编辑页面")
 			public String  goTeamMemberManage() throws Exception {
 
 				return "index";
@@ -1308,7 +1306,7 @@ public class BaseInfoActionBean extends RootAction{
 			
 			
 			//队员战绩管理页面
-			@Permission(name="队员战绩管理查询")
+			@Permission(name="队员战绩管理页面")
 			public String getTuserData() throws Exception {
 				
 				String str;
@@ -1365,7 +1363,7 @@ public class BaseInfoActionBean extends RootAction{
 			
 			
 			//队员战绩管理页面
-			@Permission(name="队员战绩管理编辑")
+			@Permission(name="队员战绩管理编辑页面")
 			public String  editTeamMemberManage() throws Exception {
 				try {
 					userrecordsList = new ArrayList<Userrecords>();
@@ -1431,7 +1429,7 @@ public class BaseInfoActionBean extends RootAction{
 					
 			
 			//球队战绩管理页面
-			@Permission(name="球队战绩管理查询")
+			@Permission(name="队员战绩管理编辑页面")
 			public String  goTeamScoreManage() throws Exception {
 
 				return "index";
@@ -1439,7 +1437,7 @@ public class BaseInfoActionBean extends RootAction{
 			
 			
 			//球队战绩管管理页面
-			@Permission(name="球队战绩管理查询")
+			@Permission(name="球队战绩管管理页面")
 			public String getTeamScoreData() throws Exception {
 				
 				String str;
@@ -1468,7 +1466,6 @@ public class BaseInfoActionBean extends RootAction{
 			
 			
 			//获取json格式球队列表
-			@Permission(name="球队战绩管理查询")
 			public String getTeamListJson() {
 				
 	         String str;
@@ -1514,7 +1511,7 @@ public class BaseInfoActionBean extends RootAction{
 			
 			
 			//球队战绩管理页面
-			@Permission(name="球队战绩管理编辑")
+			@Permission(name="球队战绩管理编辑页面")
 			public String  editTeamScoreManage() throws BusinessFailure {
 				try {
 					
