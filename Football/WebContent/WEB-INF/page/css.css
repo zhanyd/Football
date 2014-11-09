@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+body{ font-size:12px;}
+#tablewi{ width:100%;background:#ccc; text-align:left; font-size:12px;}
+#tablewi td{ background-color:#FFF; height:24px; color:#6699CC; padding-left:5px;}
+.sty1{ background:url(1.jpg) ; color:#333333;}
+
+#tablewi1{ width:100%;background:#ccc; text-align:left; font-size:12px;}
+#tablewi1 td{ background-color:#FFF; height:24px;padding-left:5px;}
+
+#tablewi2{ width:100%;text-align:left; font-size:12px;}
+#tablewi2 td{height:30px;padding-left:5px;color:#333;}
+
+#tablewi3{ width:100%;text-align:left; font-size:12px;}
+#tablewi3 td{ height:30px; color:#333; padding-left:5px;}
+.txt1{ width:173px; border:1px #c0cccc solid;}
+.txt2{ width:40px; border:1px #c0cccc solid;}
+.txt3{border:1px #c0cccc solid;}
+.txt4{width:103px; border:1px #c0cccc solid;}
+
+#tablewi4{ width:100%;text-align:left; font-size:12px;}
+#tablewi4 td{height:30px;padding-left:5px;color:#333;}
+.date-picker-wp {
+display: none;
+position: absolute;
+background: #f1f1f1;
+left: 40px;
+top: 40px;
+border-top: 4px solid #3879d9;
+}
+.date-picker-wp table {
+border: 1px solid #ddd;
+}
+.date-picker-wp td {
+background: #fafafa;
+width: 22px;
+height: 18px;
+border: 1px solid #ccc;
+font-size: 12px;
+text-align: center;
+}
+.date-picker-wp td.noborder {
+border: none;
+background: none;
+}
+.date-picker-wp td a {
+color: #1c93c4;
+text-decoration: none;
+}
+.strong {font-weight: bold}
+.hand {cursor: pointer; color: #3879d9}
+
+.main{ background:url(1_03.jpg) repeat-x; height:60px; width:1200px; border:1px #c0cccc solid; margin:2px 0;}
+.mainta{ width:1200px;border:1px #c0cccc solid;}
+.tit{ background:url(1_07.jpg) repeat-x; height:25px; border-bottom:1px #c0cccc solid;}
+.footer1{ width:300px; float:left;}
+.footer2{ widows:600px; float:right;}

@@ -39,7 +39,7 @@ public class BaseInfoActionBean extends RootAction{
 	private List<Drugstore> drugstoreList;
 	
 	private PageObject pageObject;
-  
+
 	//角色
 	private Role role;
 	private List<Role> rolelist;
@@ -362,8 +362,6 @@ public class BaseInfoActionBean extends RootAction{
 		this.drugstoreList = drugstoreList;
 	}
 
-	
-//****************************get set over******************************************************
 	
 	public String goToAddOrderProperty() throws Exception {
 		return "addOrderProperty";
